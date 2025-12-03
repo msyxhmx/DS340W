@@ -22,8 +22,11 @@ OR
 
 Download as ZIP and extract manually.
 
+### 3\. Open File
 
-### 3\. Install Dependencies
+Click file named "Final Code_SyahmiMuslim_DanielShamsul.ipynb" and open it
+
+### 4\. Install Dependencies
 
 All necessary libraries are installed within the first code cell of the notebook. However, it's good practice to set up your environment beforehand.
 
@@ -33,7 +36,7 @@ pip install pandas numpy scikit-learn jupyter
 
 The notebook will handle the installation of specialized libraries like pygad, imbalanced-learn, catboost, and deap using !pip install commands.
 
-### 4\. Data Setup
+### 5\. Data Setup
 
 The notebook assumes the credit card transaction dataset is available.
 
