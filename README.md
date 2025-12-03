@@ -40,6 +40,13 @@ The notebook will handle the installation of specialized libraries like pygad, i
 
 The notebook assumes the credit card transaction dataset is available.
 
+OR 
+
+You can download the datasets directly from the attached link:
+
+https://pennstateoffice365-my.sharepoint.com/:f:/g/personal/mbs6945_psu_edu/EmrVB-CxquFFnwQ-VXsLb_0Bbe7cktFhhvlsY9pZDahWSw?e=9qxqZA 
+
+
 - **Dataset:** This project utilizes the **Kaggle European Credit Card Fraud Detection Dataset**.
 - **Action:** Ensure the dataset file (typically named train.csv or test.csv) is downloaded and placed directly in the **root directory** of this repository.
 
@@ -57,7 +64,7 @@ The notebook is structured into clear, sequential sections. **You must run the c
 
 ## Detailed Project Workflow and Runtime
 
-This section details the 11-step analytical pipeline implemented in the notebook. Running the cells sequentially ensures all steps are completed.
+This section details the 10-step analytical pipeline implemented in the notebook. Running the cells sequentially ensures all steps are completed.
 
 | **Step** | **Action/Notebook Title** | **Description** | **Estimated Runtime** |
 | --- | --- | --- | --- |
@@ -69,19 +76,17 @@ This section details the 11-step analytical pipeline implemented in the notebook
 | --- | --- | --- | --- |
 | **4** | **Data Preprocessing (Downsampling and Scaling)** | Handles feature scaling (Amount and Time) and sets up the X (features) and y (target) variables. | Instant |
 | --- | --- | --- | --- |
-| **5** | **Data Balancing (SMOTE-Tomek)** | Splits the data and applies the **SMOTE-Tomek** technique to address the class imbalance, creating the final balanced training data. | **~2-5 minutes** |
+| **5** | **ML Baseline Models Training** | Trains the initial models (Logistic Regression, Decision Tree, Random Forest) using **all original features** to establish the performance benchmark. | ~1 minute |
 | --- | --- | --- | --- |
-| **6** | **ML Baseline Models Training** | Trains the initial models (Logistic Regression, Decision Tree, Random Forest) using **all original features** to establish the performance benchmark. | ~1 minute |
+| **6** | **Machine Learning Models Training (Using GA-RF selected features)** | Retrains the Baseline Models (LR, DT, RF) using the **reduced feature subset** identified by the GA-RF. | ~1 minute |
 | --- | --- | --- | --- |
-| **7** | **Machine Learning Models Training (Using GA-RF selected features)** | Retrains the Baseline Models (LR, DT, RF) using the **reduced feature subset** identified by the GA-RF. | ~1 minute |
+| **7** | **GA Feature Selection (Novelty 1: F2-Score Fitness)** | Defines and executes the Genetic Algorithm using **Random Forest** as the fitness evaluator, optimized for the **F2-Score** (to increase Recall). | **~15-20 minutes** |
 | --- | --- | --- | --- |
-| **8** | **GA Feature Selection (Novelty 1: F2-Score Fitness)** | Defines and executes the Genetic Algorithm using **Random Forest** as the fitness evaluator, optimized for the **F2-Score** (to increase Recall). | **~15-20 minutes** |
+| **8** | **GA Feature Selection (Novelty 2: CatBoost Fitness)** | Defines and executes the Genetic Algorithm using the robust **CatBoost** model as the fitness evaluator. | **~15-20 minutes** |
 | --- | --- | --- | --- |
-| **9** | **GA Feature Selection (Novelty 2: CatBoost Fitness)** | Defines and executes the Genetic Algorithm using the robust **CatBoost** model as the fitness evaluator. | **~15-20 minutes** |
+| **9** | **Machine Learning Models Training (Using GA-CatBoost selected features)** | Retrains the Baseline Models (LR, DT, RF) and trains the **Final CatBoost Model** using the feature subset identified by the GA-CatBoost. | ~1-2 minutes |
 | --- | --- | --- | --- |
-| **10** | **Machine Learning Models Training (Using GA-CatBoost selected features)** | Retrains the Baseline Models (LR, DT, RF) and trains the **Final CatBoost Model** using the feature subset identified by the GA-CatBoost. | ~1-2 minutes |
-| --- | --- | --- | --- |
-| **11** | **Final Comparison of All ML Models** | Generates the final and sorted comparison table summarizing the performance of all 11 models across the baseline and GA-optimized phases. | Instant |
+| **10** | **Final Comparison of All ML Models** | Generates the final and sorted comparison table summarizing the performance of all 11 models across the baseline and GA-optimized phases. | Instant |
 | --- | --- | --- | --- |
 
 **_Note on Runtime:_** The Genetic Algorithm execution is computationally intensive and requires significant CPU time. The runtime listed is an estimate.
