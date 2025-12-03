@@ -12,12 +12,20 @@ Follow these steps to set up the environment and run the code.
 
 Ensure you have Python installed (version 3.8+ is recommended). The code runs best in a Jupyter environment (Notebook or Lab).
 
-### 2\. Clone the Repository
+**_Note:_** We use Google Colab as our main environment
+
+### 2\. Clone or Download the Repository
 
 Clone this repository to your local machine:
 
 git clone \[<https://github.com/msyxhmx/DS340W.git\>](<https://github.com/msyxhmx/DS340W.git>)  
 cd DS340W  
+
+OR
+
+Download as ZIP and extract manually.
+
+
 
 
 ### 3\. Install Dependencies
