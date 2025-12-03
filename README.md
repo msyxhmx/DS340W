@@ -16,27 +16,16 @@ Ensure you have Python installed (version 3.8+ is recommended). The code runs be
 
 ### 2\. Clone or Download the Repository
 
-Clone this repository to your local machine:
-
-git clone \[<https://github.com/msyxhmx/DS340W.git\>](<https://github.com/msyxhmx/DS340W.git>)  
-cd DS340W  
+Clone this repository to your local machine
 
 OR
 
 Download as ZIP and extract manually.
 
 
-
-
 ### 3\. Install Dependencies
 
 All necessary libraries are installed within the first code cell of the notebook. However, it's good practice to set up your environment beforehand.
-
-We recommend creating a virtual environment:
-
-python -m venv venv  
-source venv/bin/activate # On macOS/Linux  
-venv\\Scripts\\activate # On Windows  
 
 Once activated, you can install the core packages:
 
